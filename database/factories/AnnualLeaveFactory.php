@@ -16,7 +16,7 @@ $factory->define(App\Models\AnnualLeave::class, function (Faker $faker) {
     $endDate = $faker->dateTimeBetween($startDate, $startDate->format('Y-m-d').' +5 days');
 
     $annualLeave = [
-        'user_id' => \App\Models\User::inRandomOrder()->first()->id,
+        'user_id' => $user->id,
         'reason' => $faker->text,
         'status' => $faker->randomElement(['pending', 'approved', 'rejected']),
     ];
