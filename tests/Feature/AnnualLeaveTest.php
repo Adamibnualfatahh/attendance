@@ -93,7 +93,7 @@ class AnnualLeaveTest extends TestCase
     /** @test */
     public function it_generates_code_coverage_report()
     {
-        $coverageFile = base_path('coverage-html');
+        $coverageFile = base_path('reports/');
         exec("phpunit --coverage-html {$coverageFile}");
 
         $this->assertFileExists($coverageFile);
